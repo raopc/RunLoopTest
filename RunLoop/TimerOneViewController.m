@@ -26,7 +26,17 @@
     [self.view addSubview:self.tableView];
     
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(beginUpdateUI) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    
+    //可以将Timer加入到NSRunLoopCommonModes
+    //也可以将Timer分别加入到NSDefaultRunLoopMode 和 UITrackingRunLoopMode 效果一样
+    //1
+//    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    
+    //2
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:UITrackingRunLoopMode];
+
+
 }
 
 - (void)beginUpdateUI {

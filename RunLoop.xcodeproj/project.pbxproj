@@ -15,6 +15,9 @@
 		560EF3A1231F93160063BB4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 560EF3A0231F93160063BB4B /* main.m */; };
 		560EF3AB231F93160063BB4B /* RunLoopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 560EF3AA231F93160063BB4B /* RunLoopTests.m */; };
 		560EF3B6231F93160063BB4B /* RunLoopUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 560EF3B5231F93160063BB4B /* RunLoopUITests.m */; };
+		560EF3C5231F9C170063BB4B /* TimerOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560EF3C4231F9C170063BB4B /* TimerOneViewController.m */; };
+		560EF3C8231FA6CA0063BB4B /* TimerTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560EF3C7231FA6CA0063BB4B /* TimerTwoViewController.m */; };
+		560EF3CB231FAF710063BB4B /* PerformSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560EF3CA231FAF710063BB4B /* PerformSelectorViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		560EF3B1231F93160063BB4B /* RunLoopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunLoopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		560EF3B5231F93160063BB4B /* RunLoopUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopUITests.m; sourceTree = "<group>"; };
 		560EF3B7231F93160063BB4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		560EF3C3231F9C170063BB4B /* TimerOneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerOneViewController.h; sourceTree = "<group>"; };
+		560EF3C4231F9C170063BB4B /* TimerOneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerOneViewController.m; sourceTree = "<group>"; };
+		560EF3C6231FA6CA0063BB4B /* TimerTwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerTwoViewController.h; sourceTree = "<group>"; };
+		560EF3C7231FA6CA0063BB4B /* TimerTwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerTwoViewController.m; sourceTree = "<group>"; };
+		560EF3C9231FAF710063BB4B /* PerformSelectorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PerformSelectorViewController.h; sourceTree = "<group>"; };
+		560EF3CA231FAF710063BB4B /* PerformSelectorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PerformSelectorViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +114,12 @@
 				560EF392231F93120063BB4B /* AppDelegate.m */,
 				560EF394231F93120063BB4B /* ViewController.h */,
 				560EF395231F93120063BB4B /* ViewController.m */,
+				560EF3C3231F9C170063BB4B /* TimerOneViewController.h */,
+				560EF3C4231F9C170063BB4B /* TimerOneViewController.m */,
+				560EF3C6231FA6CA0063BB4B /* TimerTwoViewController.h */,
+				560EF3C7231FA6CA0063BB4B /* TimerTwoViewController.m */,
+				560EF3C9231FAF710063BB4B /* PerformSelectorViewController.h */,
+				560EF3CA231FAF710063BB4B /* PerformSelectorViewController.m */,
 				560EF397231F93120063BB4B /* Main.storyboard */,
 				560EF39A231F93160063BB4B /* Assets.xcassets */,
 				560EF39C231F93160063BB4B /* LaunchScreen.storyboard */,
@@ -263,6 +278,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				560EF396231F93120063BB4B /* ViewController.m in Sources */,
+				560EF3C5231F9C170063BB4B /* TimerOneViewController.m in Sources */,
+				560EF3C8231FA6CA0063BB4B /* TimerTwoViewController.m in Sources */,
+				560EF3CB231FAF710063BB4B /* PerformSelectorViewController.m in Sources */,
 				560EF3A1231F93160063BB4B /* main.m in Sources */,
 				560EF393231F93120063BB4B /* AppDelegate.m in Sources */,
 			);

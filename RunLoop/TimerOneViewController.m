@@ -1,38 +1,44 @@
 //
-//  ViewController.m
+//  TimerOneViewController.m
 //  RunLoop
 //
 //  Created by Charles on 2019/9/4.
 //  Copyright © 2019 Charles. All rights reserved.
 //
 
-#import "ViewController.h"
 #import "TimerOneViewController.h"
-#import "TimerTwoViewController.h"
-#import "PerformSelectorViewController.h"
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface TimerOneViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSArray *dataArray;
 
 @end
 
-@implementation ViewController
+@implementation TimerOneViewController
 
+- (void)dealloc
+{
+    NSLog(@"释放 %@", NSStringFromClass([TimerOneViewController class]));
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = UIColor.whiteColor;
     [self.view addSubview:self.tableView];
-    self.dataArray = @[@"NSTimer在主线程使用", @"NSTimer在子线程使用", @"Perform Selector的使用"];
     
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(beginUpdateUI) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
 
+- (void)beginUpdateUI {
+    
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    
+}
 
 #pragma mark - <UITableViewDataSource>
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataArray.count;
+    return 100;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -40,25 +46,14 @@
     if(cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    cell.textLabel.text = self.dataArray[indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%d", arc4random() % 100];
     return cell;
 }
 
 #pragma mark - <UITableViewDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.row == 0) {
-        TimerOneViewController *timerOne = [[TimerOneViewController alloc] init];
-        [self.navigationController pushViewController:timerOne animated:YES];
-    }
-    if(indexPath.row == 1) {
-        TimerTwoViewController *timeTwo = [[TimerTwoViewController alloc] init];
-        [self.navigationController pushViewController:timeTwo animated:YES];
-    }
-    if(indexPath.row == 2) {
-        PerformSelectorViewController *perfromSelector = [[PerformSelectorViewController alloc] init];
-        [self.navigationController pushViewController:perfromSelector animated:YES];
-    }
+
 }
 
 #pragma mark - Property
